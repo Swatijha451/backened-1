@@ -13,11 +13,13 @@
      <% for(post of posts){ %>
         <div class="main">
         <h3>@<%= post.username %></h3>
-        <h4>@<%= post.content %></h4>
+        <h4><%= post.content %></h4>
         <br>
         <a href="http://localhost:8080/posts/<%= post.id %>">See in detail</a>
-        <a href="http://localhost:8080/posts/<%= post.id %>/edit">See in detail</a>
-
+        <a href="http://localhost:8080/posts/<%= post.id %>/edit">edit</a>
+        <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+        <button>Delete post</button>
+         </form>
         </div>
    <% } %> 
 
